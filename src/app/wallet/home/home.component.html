@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="wallet-home-container">
+  <!-- Wallet Balance -->
+  <div class="wallet-balance">
+    <h2>Wallet Balance</h2>
+    <h1>₹12,560.00</h1>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="wallet-actions">
+    <button mat-raised-button color="primary">Add Money</button>
+    <button mat-raised-button color="accent">Send Money</button>
+    <button mat-raised-button color="primary">Scan QR</button>
+  </div>
+
+  <!-- Add Expense -->
+  <mat-card class="add-expense-card">
+    <button mat-stroked-button color="primary">
+      <mat-icon>add</mat-icon> Add Expense
+    </button>
+  </mat-card>
+
+  <!-- Transaction History -->
+  <div class="transaction-history">
+    <h3>Transaction History</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let tx of transactions">
+        <mat-icon matListIcon>currency_rupee</mat-icon>
+        <div matLine>₹{{ tx.amount }} - {{ tx.label }}</div>
+        <div matLine class="tx-date">{{ tx.date }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
